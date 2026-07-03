@@ -34,6 +34,7 @@
     initTicker();
     setActiveNavLink();
     initToastContainer();
+    initGoogleAnalytics();
   }
 
   /* ---------- Utilities ---------- */
@@ -451,6 +452,29 @@
     document.querySelectorAll('.navbar-nav a').forEach(function (link) {
       var href = link.getAttribute('href');
       link.classList.toggle('active', href === current);
+    });
+  }
+
+  /* ---------- Google Analytics ---------- */
+  function initGoogleAnalytics() {
+    var gaId = CONFIG.analyticsId;
+    if (!gaId || gaId === 'G-XXXXXXXXXX') return;
+
+    // Load Google Analytics script
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+    document.head.appendChild(gaScript);
+
+    // Initialize dataLayer and gtag function
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', gaId, {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=None;Secure'
     });
   }
 })();

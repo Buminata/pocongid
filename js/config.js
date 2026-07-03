@@ -7,5 +7,6 @@ window.POCONG_CONFIG = {
   siteName: 'Pocong.id',
   tagline: 'Cerita Horor Nusantara yang Membuat Bulu Kuduk Berdiri.',
   locale: 'id_ID',
-  isBlogger: false
+  isBlogger: false,
+  analyticsId: 'G-POCONGID123' // Ganti dengan ID Google Analytics Anda (contoh: G-XXXXXXXXXX)
 };
