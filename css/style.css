@@ -146,28 +146,38 @@ p {
   pointer-events: none;
 }
 
+.loader-icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.7));
+}
+
 .loader-logo {
-  font-family: var(--font-heading);
+  font-family: 'Cinzel', 'Georgia', serif;
   font-size: 2.5rem;
-  color: var(--accent-red-light);
-  text-shadow: 0 0 20px var(--accent-red-glow);
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #ff0000;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 5px rgba(0, 0, 0, 0.5);
   margin-bottom: 2rem;
-  animation: pulse-glow 1.5s ease-in-out infinite;
+  text-transform: uppercase;
 }
 
 .loader-bar {
-  width: 200px;
-  height: 3px;
-  background: var(--border-color);
-  border-radius: 3px;
+  width: 220px;
+  height: 4px;
+  background: rgba(139, 0, 0, 0.2);
+  border-radius: 4px;
   overflow: hidden;
+  border: 1px solid rgba(139, 0, 0, 0.3);
 }
 
 .loader-bar-fill {
   height: 100%;
-  background: var(--accent-red-light);
+  background: #ff0000;
   animation: loading-bar 1.5s ease-in-out infinite;
-  box-shadow: 0 0 10px var(--accent-red-glow);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.8);
 }
 
 /* ---------- Rain Effect ---------- */

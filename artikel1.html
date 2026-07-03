@@ -63,6 +63,15 @@
   <a href="#main-content" class="skip-link">Lompat ke konten utama</a>
 
   <div id="loading-screen" role="status" aria-label="Memuat halaman" aria-live="polite">
+    <svg class="loader-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="45" stroke="rgba(139, 0, 0, 0.2)" stroke-width="2" />
+      <circle cx="50" cy="50" r="45" stroke="#ff0000" stroke-width="2" stroke-dasharray="283" stroke-dashoffset="75" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <path d="M50 25C40.6 25 33 32.6 33 42C33 47.3 35.4 52 39.2 55.2V63H44.6V58H55.4V63H60.8V55.2C64.6 52 67 47.3 67 42C67 32.6 59.4 25 50 25ZM43.6 42.9C42.3 42.9 41.3 41.9 41.3 40.6C41.3 39.3 42.3 38.3 43.6 38.3C44.9 38.3 45.9 39.3 45.9 40.6C45.9 41.9 44.9 42.9 43.6 42.9ZM56.4 42.9C55.1 42.9 54.1 41.9 54.1 40.6C54.1 39.3 55.1 38.3 56.4 38.3C57.7 38.3 58.7 39.3 58.7 40.6C58.7 41.9 57.7 42.9 56.4 42.9Z" fill="#ff0000">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite" />
+      </path>
+    </svg>
     <div class="loader-logo">POCONG.ID</div>
     <div class="loader-bar"><div class="loader-bar-fill"></div></div>
   </div>
