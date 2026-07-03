@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+    <meta name="theme-color" content="#050505">
+  <meta name="color-scheme" content="dark">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="alternate" hreflang="id" href="https://pocong.id/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO Meta Tags -->
+  <title>Pocong.id - Cerita Horor Nusantara yang Membuat Bulu Kuduk Berdiri</title>
+  <meta name="description" content="Pocong.id adalah portal berita horor premium Indonesia. Temukan cerita pocong, misteri, dan urban legend Nusantara yang mengerikan dan autentik.">
+  <meta name="keywords" content="pocong, cerita horor, horor indonesia, urban legend, misteri nusantara, cerita seram, hantu indonesia">
+  <meta name="author" content="Pocong.id">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pocong.id/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pocong.id - Cerita Horor Nusantara">
+  <meta property="og:description" content="Cerita Horor Nusantara yang Membuat Bulu Kuduk Berdiri. Portal berita horor premium Indonesia.">
+  <meta property="og:url" content="https://pocong.id/">
+  <meta property="og:image" content="https://pocong.id/images/hero.jpg">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Pocong.id">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pocong.id - Cerita Horor Nusantara">
+  <meta name="twitter:description" content="Cerita Horor Nusantara yang Membuat Bulu Kuduk Berdiri.">
+  <meta name="twitter:image" content="https://pocong.id/images/hero.jpg">
+  <meta name="twitter:site" content="@pocongid">
+  <meta name="twitter:creator" content="@pocongid">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="Banner horor Pocong.id - Cerita Horor Nusantara">
+
+  <!-- Favicon & Manifest -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="css/style.css" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Pocong.id",
+    "url": "https://pocong.id/",
+    "description": "Cerita Horor Nusantara yang Membuat Bulu Kuduk Berdiri",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pocong.id",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pocong.id/images/logo.png"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://pocong.id/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "inLanguage": "id"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    "name": "Pocong.id",
+    "url": "https://pocong.id/",
+    "logo": "https://pocong.id/images/logo.png",
+    "description": "Portal berita horor premium Indonesia",
+    "sameAs": [
+      "https://facebook.com/pocongid",
+      "https://instagram.com/pocongid",
+      "https://twitter.com/pocongid",
+      "https://youtube.com/pocongid"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Lompat ke konten utama</a>
+  <noscript><p class="noscript-warn">JavaScript dinonaktifkan. Beberapa animasi tidak tampil, namun konten tetap dapat dibaca.</p></noscript>
+
+
+  <!-- Loading Screen -->
+  <div id="loading-screen" role="status" aria-label="Memuat halaman" aria-live="polite">
+    <div class="loader-logo">POCONG.ID</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- Rain Effect -->
+  <div id="rain-container" aria-hidden="true"></div>
+  <div id="lightning-flash" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navigasi utama">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo" aria-label="Pocong.id Beranda">
+          <img src="images/logo.png" alt="Logo Pocong.id - Portal Cerita Horor Nusantara" width="200" height="60">
+        </a>
+
+        <ul class="navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="artikel1.html">Cerita Horor</a></li>
+          <li><a href="artikel3.html">Misteri</a></li>
+          <li><a href="artikel5.html">Urban Legend</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+
+        <form class="search-form" role="search" aria-label="Cari artikel">
+          <input type="search" placeholder="Cari cerita horor..." aria-label="Kata kunci pencarian">
+          <button type="submit" aria-label="Cari artikel"><span aria-hidden="true">&#128269;</span><span class="sr-only">Cari</span></button>
+        </form>
+
+        <button class="hamburger" aria-label="Buka menu navigasi" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Breaking News Ticker -->
+  <div class="news-ticker" role="region" aria-label="Berita terbaru">
+    <div class="news-ticker-inner">
+      <span class="ticker-label">Terbaru</span>
+      <div class="ticker-wrap">
+        <div class="news-ticker-track">
+          <a href="artikel1.html">Pocong Penunggu Jembatan Tua — Cerita Horor Viral 2026</a>
+          <a href="artikel2.html">Rumah Kos Nomor 13: Kunjungan Pocong Setiap Tengah Malam</a>
+          <a href="artikel3.html">Pocong Tanpa Wajah di Makam Belanda Menghilang Saat Adzan</a>
+          <a href="artikel5.html">Desa Terlarang: Legenda Pocong Berlumuran Tanah Merah</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Banner utama">
+      <div class="hero-bg" role="img" aria-label="Latar belakang horor Nusantara"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-moon" aria-hidden="true"></div>
+      <div class="fog-layer" aria-hidden="true"></div>
+      <div class="fog-layer fog-layer-2" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <h1 class="hero-tagline">Pocong.id</h1>
+        <p class="hero-subtitle">
+          <span id="typing-text"></span><span class="typing-cursor" aria-hidden="true"></span>
+        </p>
+        <a href="artikel1.html" class="hero-cta">Baca Cerita Terpopuler</a>
+      </div>
+    </section>
+
+    <!-- Featured Story -->
+    <section class="section" aria-labelledby="featured-title">
+      <div class="container">
+        <article class="featured-story fade-in">
+          <img src="images/artikel1.jpg" alt="Ilustrasi pocong penunggu jembatan tua di malam hari" width="1200" height="450" decoding="async" fetchpriority="high" loading="eager">
+          <div class="featured-overlay">
+            <span class="featured-badge">Cerita Utama</span>
+            <h2 id="featured-title"><a href="artikel1.html">Cerita Pocong Penunggu Jembatan Tua yang Tidak Pernah Pulang</a></h2>
+            <p class="featured-meta">Oleh Redaksi Pocong.id &bull; 28 Februari 2026 &bull; 8 menit baca</p>
+          </div>
+        </article>
+
+        <div class="stats-bar fade-in scale-in" role="group" aria-label="Statistik portal">
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Cerita Horor</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Provinsi</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100K+</span>
+            <span class="stat-label">Pembaca</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Update</span>
+          </div>
+        </div>
+
+        <div class="main-grid">
+          <!-- Main Content -->
+          <div class="main-content">
+            <!-- Latest Stories -->
+            <section aria-labelledby="latest-title">
+              <div class="section-header fade-in">
+                <h2 class="section-title" id="latest-title">Cerita Terbaru</h2>
+                <a href="artikel1.html" class="section-link">Lihat Semua &rarr;</a>
+              </div>
+
+              <div class="article-grid stagger-children">
+                <article class="article-card fade-in">
+                  <div class="article-card-image">
+                    <a href="artikel2.html">
+                      <img src="images/artikel2.jpg" alt="Rumah kos nomor 13 yang angker di malam hari" width="400" height="200" decoding="async" loading="lazy">
+                    </a>
+                  </div>
+                  <div class="article-card-body">
+                    <span class="article-category">Misteri</span>
+                    <h3><a href="artikel2.html">Rumah Kos Nomor 13 yang Selalu Didatangi Pocong Setelah Tengah Malam</a></h3>
+                    <p class="article-excerpt">Setiap malam setelah pukul dua belas, penghuni kosan di Gang Melati mendengar langkah kaki dan suara kain kafan bergesekan di lantai...</p>
+                    <div class="article-meta">
+                      <time datetime="2026-02-25">25 Feb 2026</time>
+                      <span>7 menit baca</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="article-card fade-in">
+                  <div class="article-card-image">
+                    <a href="artikel3.html">
+                      <img src="images/artikel3.jpg" alt="Makam Belanda tua dengan suasana mistis" width="400" height="200" decoding="async" loading="lazy">
+                    </a>
+                  </div>
+                  <div class="article-card-body">
+                    <span class="article-category">Urban Legend</span>
+                    <h3><a href="artikel3.html">Pocong Tanpa Wajah di Makam Belanda yang Menghilang Saat Adzan Subuh</a></h3>
+                    <p class="article-excerpt">Warga Kampung Tua menyaksikan sosok pocong tanpa wajah berdiri di antara nisan-nisan Belanda kuno setiap malam Jumat...</p>
+                    <div class="article-meta">
+                      <time datetime="2026-02-22">22 Feb 2026</time>
+                      <span>9 menit baca</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="article-card fade-in">
+                  <div class="article-card-image">
+                    <a href="artikel4.html">
+                      <img src="images/artikel4.jpg" alt="Sawah luas di malam hari dengan kabut tipis" width="400" height="200" decoding="async" loading="lazy">
+                    </a>
+                  </div>
+                  <div class="article-card-body">
+                    <span class="article-category">Cerita Horor</span>
+                    <h3><a href="artikel4.html">Tangisan Pocong dari Tengah Sawah yang Mengubah Nasib Seorang Petani</a></h3>
+                    <p class="article-excerpt">Pak Surya tidak pernah menyangka bahwa suara tangisan dari tengah sawahnya akan membawanya pada penemuan mengerikan...</p>
+                    <div class="article-meta">
+                      <time datetime="2026-02-18">18 Feb 2026</time>
+                      <span>8 menit baca</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="article-card fade-in">
+                  <div class="article-card-image">
+                    <a href="artikel5.html">
+                      <img src="images/artikel5.jpg" alt="Desa terpencil dengan tanah merah di malam hari" width="400" height="200" decoding="async" loading="lazy">
+                    </a>
+                  </div>
+                  <div class="article-card-body">
+                    <span class="article-category">Urban Legend</span>
+                    <h3><a href="artikel5.html">Legenda Pocong Berlumuran Tanah Merah di Desa Terlarang</a></h3>
+                    <p class="article-excerpt">Desa Karangredjo dikenal warga sekitar sebagai tempat yang dilarang dikunjungi setelah matahari terbenam...</p>
+                    <div class="article-meta">
+                      <time datetime="2026-02-15">15 Feb 2026</time>
+                      <span>10 menit baca</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <!-- Promo Banner -->
+            <div class="promo-banner fade-in">
+              <img src="images/banner.jpg" alt="Banner Pocong.id - Jelajahi Cerita Horor Nusantara" width="1200" height="200" decoding="async" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="sidebar" aria-label="Sidebar">
+            <!-- Popular Stories -->
+            <div class="sidebar-widget fade-in">
+              <h3 class="widget-title">Terpopuler</h3>
+              <ol class="popular-list">
+                <li>
+                  <span class="popular-number">1</span>
+                  <a href="artikel1.html">Pocong Penunggu Jembatan Tua yang Tidak Pernah Pulang</a>
+                </li>
+                <li>
+                  <span class="popular-number">2</span>
+                  <a href="artikel5.html">Legenda Pocong Berlumuran Tanah Merah</a>
+                </li>
+                <li>
+                  <span class="popular-number">3</span>
+                  <a href="artikel3.html">Pocong Tanpa Wajah di Makam Belanda</a>
+                </li>
+                <li>
+                  <span class="popular-number">4</span>
+                  <a href="artikel2.html">Rumah Kos Nomor 13 yang Didatangi Pocong</a>
+                </li>
+                <li>
+                  <span class="popular-number">5</span>
+                  <a href="artikel4.html">Tangisan Pocong dari Tengah Sawah</a>
+                </li>
+              </ol>
+            </div>
+
+            <!-- Categories -->
+            <div class="sidebar-widget fade-in">
+              <h3 class="widget-title">Kategori</h3>
+              <ul class="category-list">
+                <li><a href="artikel1.html">Cerita Horor <span class="category-count">12</span></a></li>
+                <li><a href="artikel3.html">Misteri <span class="category-count">8</span></a></li>
+                <li><a href="artikel5.html">Urban Legend <span class="category-count">15</span></a></li>
+                <li><a href="artikel2.html">Kisah Nyata <span class="category-count">6</span></a></li>
+                <li><a href="artikel4.html">Legenda Daerah <span class="category-count">10</span></a></li>
+              </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="sidebar-widget fade-in">
+              <h3 class="widget-title">Newsletter Horor</h3>
+              <p class="widget-desc">Dapatkan cerita horor terbaru langsung ke email Anda setiap minggu.</p>
+              <form class="newsletter-form" aria-label="Formulir newsletter">
+                <input type="email" placeholder="Email Anda" required aria-label="Alamat email">
+                <button type="submit">Berlangganan</button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Logo Pocong.id" width="160" height="48" decoding="async" loading="lazy">
+          <p>Pocong.id adalah portal berita horor premium Indonesia yang menghadirkan cerita-cerita misterius dari seluruh Nusantara. Kami berkomitmen menyajikan konten horor berkualitas dengan standar jurnalistik profesional.</p>
+          <div class="social-links" aria-label="Media sosial">
+            <a href="https://facebook.com/pocongid" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+            <a href="https://instagram.com/pocongid" target="_blank" rel="noopener noreferrer" aria-label="Instagram">in</a>
+            <a href="https://twitter.com/pocongid" target="_blank" rel="noopener noreferrer" aria-label="Twitter">X</a>
+            <a href="https://youtube.com/pocongid" target="_blank" rel="noopener noreferrer" aria-label="YouTube">&#9654;</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Navigasi</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="artikel1.html">Cerita Horor</a></li>
+            <li><a href="artikel3.html">Misteri</a></li>
+            <li><a href="artikel5.html">Urban Legend</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Informasi</h4>
+          <ul class="footer-links">
+            <li><a href="tentang.html">Tentang Kami</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="tentang.html#kebijakan-privasi" target="_blank" rel="noopener">Kebijakan Privasi</a></li>
+            <li><a href="tentang.html#syarat-ketentuan" target="_blank" rel="noopener">Syarat &amp; Ketentuan</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Artikel Populer</h4>
+          <ul class="footer-links">
+            <li><a href="artikel1.html">Pocong Penunggu Jembatan</a></li>
+            <li><a href="artikel2.html">Rumah Kos Nomor 13</a></li>
+            <li><a href="artikel3.html">Pocong Tanpa Wajah</a></li>
+            <li><a href="artikel4.html">Tangisan di Sawah</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pocong.id. Hak Cipta Dilindungi Undang-Undang.</p>
+        <p>Dibuat dengan dedikasi untuk pecinta cerita horor Nusantara.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Kembali ke atas">&#8593;</button>
+
+    <script src="js/config.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

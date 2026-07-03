@@ -1,0 +1,27 @@
+{
+  "name": "Pocong.id - Cerita Horor Nusantara",
+  "short_name": "Pocong.id",
+  "description": "Cerita Horor Nusantara yang Membuat Bulu Kuduk Berdiri",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#8b0000",
+  "orientation": "portrait-primary",
+  "lang": "id",
+  "categories": ["news", "entertainment"],
+  "icons": [
+    {
+      "src": "images/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/logo.png",
+      "sizes": "200x60",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
