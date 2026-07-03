@@ -2314,6 +2314,9 @@ window.POCONG_CONFIG.blogUrl = '<data:blog.homepageUrl/>';
   //]]></script>
 </head>
 <body>
+  <b:section class='header' id='header' maxwidgets='1' showaddelement='yes'>
+    <b:widget id='Header1' locked='false' title='Header' type='Header' visible='true'/>
+  </b:section>
   <a class='skip-link' href='#main-content'>Lompat ke konten utama</a>
   <div aria-hidden='true' id='loading-screen' role='status'><div class='loader-logo'>POCONG.ID</div><div class='loader-bar'><div class='loader-bar-fill'/></div></div>
   <div aria-hidden='true' id='rain-container'/>
@@ -2323,6 +2326,9 @@ window.POCONG_CONFIG.blogUrl = '<data:blog.homepageUrl/>';
     <nav aria-label='Navigasi utama' class='navbar' role='navigation'>
       <div class='navbar-inner'>
         <a class='navbar-logo' expr:href='data:blog.homepageUrl'>
+          <b:if cond='data:blog.logo'>
+            <img expr:src='data:blog.logo' alt='POCONG.ID' class='navbar-logo-img'/>
+          </b:if>
           <span class='navbar-logo-text' style='font-family: &quot;Cinzel&quot;, serif; font-size: 1.5rem; font-weight: 700; color: #ff0000; letter-spacing: 2px;'>POCONG.ID</span>
         </a>
         <ul class='navbar-nav'>
