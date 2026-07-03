@@ -1,40 +1,63 @@
 /**
  * Pocong.id - Production JavaScript
- * Optimized: rAF scroll, passive listeners, a11y, reduced-motion
+ * Mobile-optimised: animations disabled on low-end / small screens
  */
 (function () {
   'use strict';
 
   var CONFIG = window.POCONG_CONFIG || {};
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Treat phones (< 768px) or slow connections as "lite" mode
+  var isMobile = window.innerWidth < 768;
+  var isSlowConn = (navigator.connection &&
+    (navigator.connection.saveData ||
+      navigator.connection.effectiveType === '2g' ||
+      navigator.connection.effectiveType === 'slow-2g'));
+  var liteMode = isMobile || isSlowConn || prefersReducedMotion;
 
   document.addEventListener('DOMContentLoaded', init);
 
   function init() {
     initSkipLink();
     initLoadingScreen();
-    if (!prefersReducedMotion) {
+
+    if (!liteMode) {
       initTypingEffect();
       initRainEffect();
       initLightningEffect();
+      initParallaxHero();
+      initCardTilt();
+      initTicker();
     } else {
       initStaticHeroText();
+      // Hide heavy decorative elements immediately on mobile
+      hideElement('rain-container');
+      hideElement('lightning-flash');
+      // Stop ticker animation on mobile
+      var track = document.querySelector('.news-ticker-track');
+      if (track) track.style.animationPlayState = 'paused';
     }
+
     initStickyNavbar();
     initHamburgerMenu();
     initScrollAnimations();
     initBackToTop();
-    initParallaxHero();
     initLazyLoading();
     initSearch();
     initNewsletterForm();
     initContactForm();
     initReadingProgress();
-    initCardTilt();
-    initTicker();
     setActiveNavLink();
     initToastContainer();
     initGoogleAnalytics();
+  }
+
+  function hideElement(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.style.display = 'none';
+      el.setAttribute('aria-hidden', 'true');
+    }
   }
 
   /* ---------- Utilities ---------- */
@@ -97,16 +120,17 @@
     var loader = document.getElementById('loading-screen');
     if (!loader) return;
     document.body.classList.add('loading');
+    var delay = liteMode ? 0 : 800;
     var hide = function () {
       loader.classList.add('hidden');
       document.body.classList.remove('loading');
       loader.setAttribute('aria-hidden', 'true');
     };
     if (document.readyState === 'complete') {
-      setTimeout(hide, prefersReducedMotion ? 0 : 800);
+      setTimeout(hide, delay);
     } else {
       window.addEventListener('load', function () {
-        setTimeout(hide, prefersReducedMotion ? 0 : 800);
+        setTimeout(hide, delay);
       });
     }
   }
@@ -162,11 +186,11 @@
     });
   }
 
-  /* ---------- Rain Effect ---------- */
+  /* ---------- Rain Effect (desktop only) ---------- */
   function initRainEffect() {
     var container = document.getElementById('rain-container');
     if (!container) return;
-    var dropCount = window.innerWidth < 768 ? 35 : 70;
+    var dropCount = 50; // only called in non-lite mode (desktop)
     var frag = document.createDocumentFragment();
     for (var i = 0; i < dropCount; i++) {
       var drop = document.createElement('div');
@@ -180,7 +204,7 @@
     container.appendChild(frag);
   }
 
-  /* ---------- Lightning ---------- */
+  /* ---------- Lightning (desktop only) ---------- */
   function initLightningEffect() {
     var flash = document.getElementById('lightning-flash');
     if (!flash) return;
@@ -203,7 +227,7 @@
     if (!navbar) return;
     var onScroll = throttle(function () {
       navbar.classList.toggle('scrolled', window.pageYOffset > 40);
-    }, 16);
+    }, 100); // throttle more aggressively on mobile
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
@@ -242,7 +266,8 @@
   function initScrollAnimations() {
     var elements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
     if (!elements.length) return;
-    if (prefersReducedMotion) {
+    if (liteMode) {
+      // On mobile just make everything visible immediately — no staggered delays
       elements.forEach(function (el) { el.classList.add('visible'); });
       return;
     }
@@ -263,17 +288,17 @@
     if (!btn) return;
     var toggle = throttle(function () {
       btn.classList.toggle('visible', window.pageYOffset > 400);
-    }, 100);
+    }, 200);
     window.addEventListener('scroll', toggle, { passive: true });
     btn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      window.scrollTo({ top: 0, behavior: liteMode ? 'auto' : 'smooth' });
     });
   }
 
-  /* ---------- Parallax Hero ---------- */
+  /* ---------- Parallax Hero (desktop only) ---------- */
   function initParallaxHero() {
     var heroBg = document.querySelector('.hero-bg');
-    if (!heroBg || prefersReducedMotion) return;
+    if (!heroBg) return;
     var ticking = false;
     window.addEventListener('scroll', function () {
       if (!ticking) {
@@ -288,6 +313,8 @@
 
   /* ---------- Lazy Loading ---------- */
   function initLazyLoading() {
+    // Native lazy loading already handled by loading="lazy" attribute.
+    // Just add loaded class for fade-in effect.
     var images = document.querySelectorAll('img[loading="lazy"]');
     images.forEach(function (img) {
       img.addEventListener('load', function () { img.classList.add('loaded'); });
@@ -405,21 +432,19 @@
     var article = document.querySelector('.article-content');
     if (!bar || !article) return;
     var update = throttle(function () {
-      var rect = article.getBoundingClientRect();
       var total = article.offsetHeight - window.innerHeight;
       if (total <= 0) return;
       var scrolled = window.pageYOffset - article.offsetTop;
       var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
       bar.style.width = pct + '%';
       bar.setAttribute('aria-valuenow', Math.round(pct));
-    }, 16);
+    }, liteMode ? 100 : 16);
     window.addEventListener('scroll', update, { passive: true });
     update();
   }
 
-  /* ---------- Card Tilt (subtle) ---------- */
+  /* ---------- Card Tilt (desktop only) ---------- */
   function initCardTilt() {
-    if (prefersReducedMotion || window.innerWidth < 1024) return;
     document.querySelectorAll('.article-card, .about-card').forEach(function (card) {
       card.addEventListener('mousemove', function (e) {
         var rect = card.getBoundingClientRect();
@@ -433,10 +458,10 @@
     });
   }
 
-  /* ---------- Breaking News Ticker ---------- */
+  /* ---------- Breaking News Ticker (desktop only) ---------- */
   function initTicker() {
     var ticker = document.querySelector('.news-ticker-track');
-    if (!ticker || prefersReducedMotion) return;
+    if (!ticker) return;
     var items = ticker.children;
     if (items.length) {
       for (var i = 0; i < items.length; i++) {
@@ -459,22 +484,13 @@
   function initGoogleAnalytics() {
     var gaId = CONFIG.analyticsId;
     if (!gaId || gaId === 'G-XXXXXXXXXX') return;
-
-    // Load Google Analytics script
     var gaScript = document.createElement('script');
     gaScript.async = true;
     gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
     document.head.appendChild(gaScript);
-
-    // Initialize dataLayer and gtag function
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function () {
-      window.dataLayer.push(arguments);
-    };
+    window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
-    window.gtag('config', gaId, {
-      anonymize_ip: true,
-      cookie_flags: 'SameSite=None;Secure'
-    });
+    window.gtag('config', gaId, { anonymize_ip: true, cookie_flags: 'SameSite=None;Secure' });
   }
 })();
