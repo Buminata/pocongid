@@ -158,6 +158,22 @@ python generate_blogger.py
 
 ---
 
+## Deploy ke GitHub Pages
+
+Situs ini menggunakan 100% path relatif, sehingga sangat cocok untuk dideploy ke GitHub Pages secara gratis tanpa konfigurasi tambahan:
+
+1. Masuk ke repository GitHub Anda di `https://github.com/Buminata/pocongid`
+2. Klik tab **Settings** di bagian menu atas.
+3. Di sidebar sebelah kiri, klik menu **Pages** (di bawah menu *Code and automation*).
+4. Pada bagian **Build and deployment**:
+   - **Source**: Pilih `Deploy from a branch`
+   - **Branch**: Pilih `main` dan folder `/ (root)`
+5. Klik tombol **Save**.
+6. Tunggu sekitar 1-2 menit. Halaman web Anda akan aktif secara publik di alamat:
+   **`https://buminata.github.io/pocongid/`**
+
+---
+
 ## Lisensi
 
 © 2026 Pocong.id. Hak Cipta Dilindungi Undang-Undang.
